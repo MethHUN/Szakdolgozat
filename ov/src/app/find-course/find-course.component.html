@@ -1,0 +1,30 @@
+<div class="container ">
+  <div class="row  ">
+    <div class="siteTitle  col-sm-12 col-md-6  col-lg-6 shadow">
+      <div>Find Course</div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <mat-form-field class="searchField">
+
+      <mat-label>search</mat-label>
+      <input matInput placeholder="Search"
+             [(ngModel)]="search" (ngModelChange)="search()" autocomplete="off">
+    </mat-form-field>
+  </div>
+
+
+  <div class="row cardFull" *ngFor="let course of subCourses" >
+    <div class="col">
+      <div class="card text-center">
+        <div class="card-header text-left">
+          {{course.editors}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{course.title}}</h5>
+          <a href="video#{{course.id}}" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+
+  </div>

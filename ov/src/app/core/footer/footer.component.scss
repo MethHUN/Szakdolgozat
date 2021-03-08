@@ -1,0 +1,31 @@
+@import 'src/styles';
+.footer{
+  background:$colorPrimary ;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+ h1{
+
+   font-weight: lighter;
+   font-size: 25px;
+ }
+  p{
+    font-weight: normal;
+    font-size: 18px;
+    color: $colorPrimaryDark;
+  }
+  .navSelect:hover{
+    color: #e4e4e4;
+    cursor: pointer;
+  }
+  fa-icon{
+    margin-right: 2rem;
+    color: $colorPrimaryDark;
+  }
+  fa-icon:hover{
+    cursor: pointer;
+    color: #e4e4e4;
+  }
+}
+.display-4{
+  font-size: 2rem;
+}

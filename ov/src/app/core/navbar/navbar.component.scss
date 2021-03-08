@@ -1,0 +1,107 @@
+
+@import 'src/styles';
+:host{
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.nav-item{
+  height: 3rem;
+}
+.navbar-brand{
+
+  .nav-logo{
+    margin-bottom:-1.6rem ;
+    height: 6rem
+  }
+
+}
+.navbar-dark .navbar-nav .nav-link {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  font-style: normal;
+  color: #585858;
+  margin-top: 0.5rem;
+
+}
+.active {
+  color: $colorPrimary !important;
+  text-shadow: none;
+  text-decoration: underline;
+
+}
+
+nav{
+  background-color: $colorBackground;
+  border-bottom: 5px solid $colorPrimary ;
+
+  animation: navbarAnimation 500ms linear !important;
+}
+.bg-dark{
+  background-color: rgba(38, 41, 45, 0.95) !important;
+}
+
+@media (min-width: 768px) {
+  a{
+    animation: logoAnimations 600ms linear !important;
+
+  }
+
+}
+
+
+@media (max-width:767px) {
+  a{
+    animation: logoAnimations2 200ms ease-in-out !important;
+
+  }
+
+  .open{
+    background: rgba(33, 33, 33, 0.9) !important;
+    opacity: 1;
+
+  }
+}
+
+
+@keyframes  logoAnimations{
+  0%{
+    opacity: 0 ;
+  }
+  80%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes  navbarAnimation{
+  0%{
+    transform: translateY(-100px);
+  }
+  80%{
+    transform: translateY(0);
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+@keyframes  logoAnimations2{
+  0%{
+    opacity: 0 ;
+    transform: translateX(-100px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
