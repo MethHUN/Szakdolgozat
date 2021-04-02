@@ -4,17 +4,53 @@
       <div>My Courses</div>
     </div>
   </div>
-  <div class="row cardFull" *ngFor="let course of subCourses" >
-    <div class="col">
+  <div class="row cardFull" *ngFor="let course of subCourses">
+    <div class="col" *ngIf="course.id != eidtCourse else editCourse">
       <div class="card text-center">
-        <div class="card-header text-left">
-          {{course.editors}}
+        <div class="card-header row ">
+          <div class="text-left col-6">
+            {{course.editors}}
+          </div>
+          <div class="text-right col-6">
+            <div class="editMode" *ngIf="checkEditmode(course.id)">
+              <i class="material-icons" (click)="selectEdit(course.id)">edit</i>
+            </div>
+          </div>
         </div>
         <div class="card-body">
           <h5 class="card-title">{{course.title}}</h5>
-          <a href="video#{{course.id}}" class="btn btn-primary">Go somewhere</a>
+          <a href="video#{{course.id}}" class="btn btn-primary">Let's learn</a>
         </div>
       </div>
     </div>
-
   </div>
+
+
+  <ng-template #editCourse>
+
+    <div class="col form-group">
+      <form (ngSubmit)="onSubmit()" #courseForm="ngForm">
+        <div class="card text-center">
+          <div class="card-header row ">
+            <div class="text-left col-6">
+
+              <input type="text" class="form-control" id="author" placeholder="{{editAuthor}}" [(ngModel)]="model.editors" #editros="ngModel" name="editros">
+
+            </div>
+            <div class="text-right col-6">
+              <div class="editMode">
+                <i class="material-icons" (click)="selectEdit()">close</i>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+
+            <input type="text" class="form-control" id="title" placeholder="{{editTitle}}"  [(ngModel)]="model.title"  #title="ngModel" name="title">
+
+            <div class="btn btn-success" (click)="save()">save</div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </ng-template>
