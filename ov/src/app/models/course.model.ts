@@ -5,7 +5,7 @@ export class Course {
   title: string;
   editors: string[];
   subCourse: SubCourse[];
-  isPublic: Boolean;
-  image: String;
+  isPublic: boolean;
+  image: string;
   description: string;
 }

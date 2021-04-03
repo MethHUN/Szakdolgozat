@@ -24,6 +24,7 @@ body {
 }
 .btn-primary{
   background: $colorPrimary;
+  border: 0;
 }
 .btn:focus {
   outline: none;
@@ -41,7 +42,7 @@ body {
 }
 .siteTitle{
   height: 5rem;
-  background: #005b9a;
+  background: $colorPrimary;
   padding: 2rem;
   div{
     display: inline-block;

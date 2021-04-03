@@ -7,14 +7,13 @@
   margin: 2rem;
   border-bottom: 8px solid $colorPrimary;
   border-radius: 0px;
-  width: 14rem;
   animation: flipInY;
   animation-duration: 0.8s;
+  
 
 }
 .card-img-top{
   object-fit: cover;
-  width: 13.95rem ;
   height: 7rem;
 }
 mat-paginator{
@@ -28,3 +27,7 @@ mat-paginator{
 
 }
 
+.editMode :hover{
+  cursor: pointer;
+    color: $colorPrimary; 
+}

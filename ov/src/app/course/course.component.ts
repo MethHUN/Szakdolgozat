@@ -45,6 +45,7 @@ export class CourseComponent implements OnInit {
   }
   save() {
     console.log(this.model)
+    this.eidtCourse = null
   }
 
 

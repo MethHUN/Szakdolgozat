@@ -1,24 +1,48 @@
-<div class="container " >
-    <div class="row  ">
-      <div class="siteTitle  col-sm-12 col-md-6  col-lg-6 shadow" ><div>My Courses</div></div>
+<div class="container ">
+  <div class="row  ">
+    <div class="siteTitle  col-sm-12 col-md-6  col-lg-6 shadow">
+      <div>My Courses</div>
     </div>
+  </div>
   <div class="row animate ">
-    <div class="col-lg-3 col-md-4 col-sm-6 " *ngFor="let course of valami" >
-      <div class="card mx-auto myShadow" >
-        <img class="card-img-top" src="https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-pwa-course.png" alt="Card image cap">
+    <div class="col-lg-3 col-md-4 col-sm-6 " *ngFor="let course of courseList">
+      <div class="card mx-auto myShadow" *ngIf="course.id != eidtCourse else edit">
+
+        <img class="card-img-top" src="{{course.image}}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <div class="editMode  text-right" *ngIf="checkEditmode(course.id)">
+            <i class="material-icons" (click)="selectEdit(course.id)">edit</i>
+          </div>
+          <h5 class="card-title">{{course.title}}</h5>
+          <p class="card-text">{{course.description}}</p>
           <a routerLink="/course" class="btn btn-primary">Start Course</a>
         </div>
       </div>
     </div>
 
   </div>
-  <mat-paginator [length]="1000"
-                 [pageSize]="10"
-                 [pageSizeOptions]="[5, 10, 25, 100]"
-  class="shadow col-lg-6  col-md-8 center"  >
+  <mat-paginator [length]="1000" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
+    class="shadow col-lg-6  col-md-8 center">
   </mat-paginator>
 
 </div>
+
+
+<ng-template #edit>
+  <div class="col mt-3 form-group ">
+    
+      <div class="card mx-auto myShadow" >
+        <form (ngSubmit)="onSubmit()" #courseForm="ngForm">
+        <img class="card-img-top" src="{{model.image}}" alt="Card image cap">
+        <div class="card-body">    
+          <input type="text" class="form-control" id="image" placeholder="{{editImage}}"  [(ngModel)]="model.image"  #title="ngModel" name="image">
+          <input type="text" class="form-control" id="title" placeholder="{{editTitle}}"  [(ngModel)]="model.title"  #title="ngModel" name="title">
+          <textarea matInput  rows="6" class="form-control" id="description" placeholder="{{editDescription}}"  [(ngModel)]="model.description"  #title="ngModel" name="description"></textarea>
+        
+          <div class="btn btn-success mt-3" (click)="save()">save</div>
+        </div>
+      </form>
+      </div>
+  </div>
+</ng-template>
+
