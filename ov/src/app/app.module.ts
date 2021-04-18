@@ -14,7 +14,7 @@ import { CourseComponent } from './course/course.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LogInComponent } from './logIn/logIn.component';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { FindCourseComponent } from './find-course/find-course.component';
 import {MatIconModule} from '@angular/material/icon';
@@ -40,8 +40,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatPaginatorModule,
     MatInputModule,
     FormsModule,
-    MatIconModule
-
+    MatIconModule,
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
