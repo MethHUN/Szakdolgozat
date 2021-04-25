@@ -9,6 +9,7 @@ import { courseMock } from './coursemock';
 })
 export class MyCoursesComponent implements OnInit {
   courseList: Course[] = courseMock;
+  lengthPaginator: number;
   editableCourses = ['0', '1']
   eidtCourse: string;
   editTitle: string;
@@ -17,6 +18,7 @@ export class MyCoursesComponent implements OnInit {
   model: Course;
   constructor() { }
   ngOnInit(): void {
+    this.lengthPaginator = this.courseList.length/8
   }
 
 
