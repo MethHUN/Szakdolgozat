@@ -1,7 +1,3 @@
-
-
-
-
 export const navLinks = [
         { name: 'HOME', url: '/home' },
         { name: 'MY COURSES', url: '/mycourses' },
@@ -10,9 +6,3 @@ export const navLinks = [
         { name: 'LOGIN', url: '/login' },
         { name: 'SIGN UP', url: '/registration' }
     ]
-
-
-
-
-
-
