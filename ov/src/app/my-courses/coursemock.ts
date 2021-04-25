@@ -55,14 +55,4 @@ g.editors = ['Alexin Zoltán', 'Admin']
 h.editors = ['Alexin Zoltán', 'Admin']
 
 
-export const courseMock=[a,b,c,d,e,f,g,h]
-
-//export class Course {
-  //  id: string;
-    //title: string;
-    //editors: string[];
-    //subCourse: SubCourse[];
-    //isPublic: Boolean;
-    //image: String;
-   // description: string;
-  //}
+export const courseMock=[a,b,c,d,e,f,g,h, a,b,d,e,f,g,h,a,b,c,e,f,g,h]

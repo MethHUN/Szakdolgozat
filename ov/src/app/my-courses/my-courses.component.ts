@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { Course } from '../models/course.model';
 import { courseMock } from './coursemock';
 
@@ -8,7 +9,10 @@ import { courseMock } from './coursemock';
   styleUrls: ['./my-courses.component.scss']
 })
 export class MyCoursesComponent implements OnInit {
-  courseList: Course[] = courseMock;
+  
+  courseMockList: Course[] = courseMock;
+  courseList = this.courseMockList.slice(0,8);
+
   lengthPaginator: number;
   editableCourses = ['0', '1']
   eidtCourse: string;
@@ -16,9 +20,14 @@ export class MyCoursesComponent implements OnInit {
   editDescription: string;
   editImage: string;
   model: Course;
+  pageEvent: PageEvent;
+
   constructor() { }
+
+
   ngOnInit(): void {
-    this.lengthPaginator = this.courseList.length/8
+
+    this.lengthPaginator = this.courseMockList.length
   }
 
 

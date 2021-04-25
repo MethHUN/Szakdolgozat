@@ -21,7 +21,7 @@
     </div>
 
   </div>
-  <mat-paginator [length]="lengthPaginator" [pageSize]="8" 
+  <mat-paginator [length]="lengthPaginator" [pageSize]="8"  [pageSizeOptions]="[8]" (page)="pageEvent = $event"
     class="shadow col-lg-6  col-md-8 center">
   </mat-paginator>
 
