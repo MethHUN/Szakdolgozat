@@ -4,11 +4,11 @@
 
       <div class="col-md-4 py-3 ">
         <h1 class="display-4">Navigation</h1>
+        <ng-container *ngFor="let link of navLinks"  >
+        <p class="navSelect" click="navigate"  routerLink={{link.url}} >{{link.name}}</p>
+      </ng-container>
+   
 
-        <p class="navSelect">Home</p>
-        <p class="navSelect">My Courses</p>
-        <p class="navSelect">Find Courses</p>
-        <p class="navSelect">Profile</p>
       </div>
       <div class="col-md-4 py-3">
         <h1 class="display-4">Contacts</h1>

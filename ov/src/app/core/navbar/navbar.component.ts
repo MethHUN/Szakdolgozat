@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { navLinks } from '../navLink';
+
+
+
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +12,11 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   isOpened = false;
   collapse = true;
+  navLinks = navLinks;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(navLinks)
   }
   opener(): void{
     this.isOpened = !this.isOpened;
