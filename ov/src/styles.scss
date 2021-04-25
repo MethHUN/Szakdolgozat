@@ -1,12 +1,12 @@
 @function random_element($elements...) {
-  @return nth($elements, random(length($elements)))
+  @return nth($elements, random(length($elements)));
 }
 //COLORS
-
 $colorPrimary: #005b9a;
 $colorPrimaryDark: #083a5c;
 $colorBackground: #e4e4e4;
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -16,13 +16,11 @@ body {
   background: $colorBackground;
 }
 
-
 .center {
   margin-left: auto;
   margin-right: auto;
-
 }
-.btn-primary{
+.btn-primary {
   background: $colorPrimary;
   border: 0;
 }
@@ -31,35 +29,45 @@ body {
   box-shadow: none;
 }
 
-.myShadow{
+.myShadow {
   -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.57);
-  -moz-box-shadow:    0px 0px 10px 0px rgba(50, 50, 50, 0.57);
-  box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.57);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.57);
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.57);
 }
-.card-title{
+.card-title {
   font-size: 16px;
   font-weight: bold;
 }
-.siteTitle{
+.siteTitle {
   height: 5rem;
   background: $colorPrimary;
   padding: 2rem;
-  div{
+  div {
     display: inline-block;
     font-size: xx-large;
     color: #e4e4e4;
     width: auto;
-    animation: random_element( fadeIn);
-    animation-duration: 1s  ;
+    animation: random_element(fadeIn);
+    animation-duration: 1s;
   }
 }
 .insideBox {
-  background-color: #fff ;
-  
-  h1{
+  background-color: #fff;
+
+  h1 {
     color: $colorPrimary;
   }
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 91, 154, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
