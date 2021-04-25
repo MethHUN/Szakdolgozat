@@ -3,19 +3,22 @@
     <h1 class="title">Login
     </h1>
     <hr>
-    <form>
-      <mat-form-field>
-        <mat-label>Username</mat-label>
-        <input matInput placeholder="Username" [(ngModel)]="name">
-      </mat-form-field>
-      <br>
-      <mat-form-field class="example-full-width">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" placeholder="password">
-      </mat-form-field>
-    </form>
 
-    <button type="button" class="btn btn-primary m-2">Login</button>
+      <form [formGroup]="loginForm">
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="username" formControlName="username">
+          <mat-error *ngIf="username.invalid  && username.touched">Incorrect Username</mat-error>       
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Old Password</mat-label>
+          <input matInput type="password" placeholder="password" formControlName="password">
+          <mat-error *ngIf="password.invalid  && password.touched">Incorrect Password</mat-error>  
+        </mat-form-field>
+      </form>
+
+    <button type="button" class="btn float-right btn-primary m-2" (click)="onSubmit()" >Login</button>
     <button type="button"  class="btn btn-link"  (click)="goToReg()">Registration</button>
   </div>
 </div>
