@@ -11,7 +11,7 @@
             <input matInput placeholder="username" formControlName="username">
             <mat-error *ngIf="username.invalid  && username.touched">Incorrect Username</mat-error>
           </mat-form-field>
-          <mat-form-field class="example-full-width">
+          <mat-form-field >
             <mat-label>Old Password</mat-label>
             <input matInput type="password" placeholder="password" formControlName="password">
             <mat-error *ngIf="password.invalid  && password.touched">Incorrect Password</mat-error>

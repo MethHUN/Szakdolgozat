@@ -10,19 +10,19 @@
         <mat-error *ngIf="username.invalid  && username.touched">Incorrect Username</mat-error>       
       </mat-form-field>
 
-      <mat-form-field class="example-full-width">
+      <mat-form-field >
         <mat-label>email</mat-label>
         <input matInput type="email" placeholder="email" formControlName="email">
         <mat-error *ngIf="email.invalid  && email.touched">Incorrect Email</mat-error>
       </mat-form-field>
 
-      <mat-form-field class="example-full-width">
+      <mat-form-field >
         <mat-label>Password</mat-label>
         <input matInput type="password" placeholder="password" formControlName="password1">
         <mat-error *ngIf="password1.invalid  && password1.touched">Incorrect Password Format </mat-error>  
       </mat-form-field>
 
-      <mat-form-field class="example-full-width">
+      <mat-form-field >
         <mat-label>Password confirm</mat-label>
         <input matInput type="password" placeholder="password" formControlName="password2" >
         <mat-error *ngIf="password2.invalid  && password2.touched">The passwords aren't same</mat-error>   
