@@ -3,28 +3,33 @@
     <h1 class="title">Registration</h1>
 
     <hr>
-    <form>
+    <form [formGroup]="registrationForm">
       <mat-form-field>
         <mat-label>Username</mat-label>
-        <input  matInput placeholder="Username" >
+        <input matInput placeholder="username" formControlName="username">
+        <mat-error *ngIf="username.invalid  && username.touched">Incorrect Username</mat-error>       
       </mat-form-field>
-      <br>
+
       <mat-form-field class="example-full-width">
-        <mat-label>Email</mat-label>
-        <input matInput type="email" placeholder="email@example.com">
+        <mat-label>email</mat-label>
+        <input matInput type="email" placeholder="email" formControlName="email">
+        <mat-error *ngIf="email.invalid  && email.touched">Incorrect Email</mat-error>
       </mat-form-field>
-      <br>
-      <mat-form-field class="example-full-width">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" placeholder="password" value="">
-      </mat-form-field>
-      <br>
+
       <mat-form-field class="example-full-width">
         <mat-label>Password</mat-label>
-        <input matInput type="password" placeholder="password" value="">
+        <input matInput type="password" placeholder="password" formControlName="password1">
+        <mat-error *ngIf="password1.invalid  && password1.touched">Incorrect Password Format </mat-error>  
       </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password confirm</mat-label>
+        <input matInput type="password" placeholder="password" formControlName="password2" >
+        <mat-error *ngIf="password2.invalid  && password2.touched">The passwords aren't same</mat-error>   
+      </mat-form-field>
+
     </form>
-    <button type="button" class="btn btn-primary m-2">SignUp</button>
+    <button type="button" class="btn btn-primary m-2" (click)="onSubmit()">SignUp</button>
     <button type="button"  class="btn btn-link"  (click)="goToLogin()">Login</button>
   </div>
 </div>
